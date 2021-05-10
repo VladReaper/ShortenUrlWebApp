@@ -1,0 +1,24 @@
+﻿@model IEnumerable<RateSetterTestApp.Models.Link>
+@{
+    ViewBag.Title = "All Shortend Links";   
+}
+<div class="jumbotron">
+    <h1>Shortened Links</h1>
+    <table id="alllinks">
+        @foreach (var link in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => link.OriginalUrl)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => link.ShortUrl)<br />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => link.CreateDate)<br />
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

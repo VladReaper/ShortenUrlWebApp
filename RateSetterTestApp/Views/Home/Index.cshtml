@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>URL Shortener</h1>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="input-group">
+            <label for="url">URL:</label>
+            <input class="input-sm" style="width: 904px" id="url" name="url" type="text" />
+            <input class="btn btn-primary" type="submit" value="Shorten" />
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(ViewBag.ShortUrl))
+    {
+        <div id="shortUrl">
+            <h3>Your shortend URL:</h3>
+            <p>@ViewBag.ShortUrl</p>
+        </div>
+    }
+</div>
